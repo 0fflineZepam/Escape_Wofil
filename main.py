@@ -3,6 +3,8 @@ import sys
 from settings import *
 from map import Map  # Upewnij się, że importujesz klasę Map bezpośrednio
 from player import Player
+from raycasting import *
+
 
 
 
@@ -18,19 +20,22 @@ class Game:
     def new_game(self):
         self.map = Map(self)
         self.player = Player(self)
+        self.raycasting = RayCasting(self)
+
 
     def update(self):
         # Aktualizacja ekranu i FPS
         self.player.update()
+        self.raycasting.update()
         pg.display.flip()
         self.delta_time = self.clock.tick(FPS)
         pg.display.set_caption(f'{self.clock.get_fps():.1f}')
 
     def draw(self):
         # Wypełnienie ekranu czarnym kolorem i rysowanie mapy
-        self.screen.fill('black')
-        self.map.draw()
-        self.player.draw()
+        self.screen.fill('pink')
+        #self.map.draw()
+        #self.player.draw()
 
     def check_events(self):
         # Sprawdzenie zdarzeń (wyjście z gry przyciskiem Esc)

@@ -2,14 +2,13 @@ from settings import *
 import pygame as pg
 import math
 
-
 class Player:
     def __init__(self, game):
         self.game = game
         self.x, self.y = PLAYER_POS
         self.angle = PLAYER_ANGLE
 
-    def movment(self):
+    def movement(self):
         sin_a = math.sin(self.angle)
         cos_a = math.cos(self.angle)
         dx, dy = 0, 0
@@ -31,7 +30,7 @@ class Player:
             dx += -speed_sin
             dy += speed_cos
 
-        self.check_wall_collsion(dx, dy)
+        self.check_wall_collision(dx, dy)
 
         if keys[pg.K_LEFT]:
             self.angle -= PLAYER_ROT_SPEED * self.game.delta_time
@@ -40,23 +39,19 @@ class Player:
         self.angle %= math.tau
 
     def check_wall(self, x, y):
-        # sprawdzanie kolizji ze sciana
         return (x, y) not in self.game.map.world_map
 
-    def check_wall_collsion(self, dx, dy):
+    def check_wall_collision(self, dx, dy):
         if self.check_wall(int(self.x + dx), int(self.y)):
             self.x += dx
         if self.check_wall(int(self.x), int(self.y + dy)):
             self.y += dy
 
     def draw(self):
-        pg.draw.line(self.game.screen, 'yellow', (self.x * 100, self.y * 100),
-                     (self.x * 100 + WIDTH * math.cos(self.angle),
-                      self.y * 100 + WIDTH * math.sin(self.angle)), 2)
-        pg.draw.circle(self.game.screen, 'green', (self.x * 100, self.y * 100), 15)
+        pg.draw.circle(self.game.screen, 'green', (int(self.x * 100), int(self.y * 100)), 15)
 
     def update(self):
-        self.movment()
+        self.movement()
 
     @property
     def pos(self):
