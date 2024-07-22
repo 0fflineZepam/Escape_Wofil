@@ -4,6 +4,7 @@ from settings import *
 from map import Map  # Upewnij się, że importujesz klasę Map bezpośrednio
 from player import Player
 from raycasting import *
+from object_renderer import *
 
 
 
@@ -20,6 +21,7 @@ class Game:
     def new_game(self):
         self.map = Map(self)
         self.player = Player(self)
+        self.object_renderer = ObjectRenderer(self)
         self.raycasting = RayCasting(self)
 
 
@@ -33,7 +35,8 @@ class Game:
 
     def draw(self):
         # Wypełnienie ekranu czarnym kolorem i rysowanie mapy
-        self.screen.fill('pink')
+        self.screen.fill('black')
+        self.object_renderer.draw()
         #self.map.draw()
         #self.player.draw()
 
