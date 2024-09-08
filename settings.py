@@ -9,6 +9,7 @@ PLAYER_POS = 1.5, 5  # Pozycja na mini-mapie
 PLAYER_ANGLE = 0
 PLAYER_SPEED = 0.004
 PLAYER_ROT_SPEED = 0.002
+PLAYER_SIZE_SCALE = 60
 
 # Ustawienia raycastingu
 FOV = math.pi / 3  # Kąt widzenia (60 stopni)
