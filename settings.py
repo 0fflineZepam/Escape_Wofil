@@ -11,8 +11,6 @@ PLAYER_SPEED = 0.004
 PLAYER_ROT_SPEED = 0.002
 PLAYER_SIZE_SCALE = 60
 
-<<<<<<< HEAD
-=======
 # Ustawienia sterowania myszka
 MOUSE_SENSITIVITY = 0.0003
 MOUSE_MAX_REL = 40
@@ -20,9 +18,8 @@ MOUSE_BORDER_LEFT = 100
 MOUSE_BORDER_RIGHT = WIDTH - MOUSE_BORDER_LEFT
 
 # Kolorowanie podlogi
-FLOOR_COLOR = (30, 30, 30)
+FLOOR_COLOR = (60, 60, 40)
 
->>>>>>> 62a09ed (sterowanie myszka podloga kolor wypelnienie ekranu niebieskie niebo)
 # Ustawienia raycastingu
 FOV = math.pi / 3  # Kąt widzenia (60 stopni)
 HALF_FOV = FOV / 2
