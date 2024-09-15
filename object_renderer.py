@@ -8,8 +8,18 @@ class ObjectRenderer:
         self.wall_textures = self.load_wall_textures()
 
     def draw(self):
+<<<<<<< HEAD
         self.render_game_objects()
 
+=======
+        self.draw_background()
+        self.render_game_objects()
+
+    def draw_background(self):
+        # floor
+        pg.draw.rect(self.screen, FLOOR_COLOR, (0, HALF_HEIGHT, WIDTH, HEIGHT))
+
+>>>>>>> 62a09ed (sterowanie myszka podloga kolor wypelnienie ekranu niebieskie niebo)
     def render_game_objects(self):
         list_objects = self.game.raycasting.objects_to_render
         for depth , image, pos in list_objects:

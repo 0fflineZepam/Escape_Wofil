@@ -13,6 +13,10 @@ class Game:
     def __init__(self):
         # Inicjalizacja Pygame i ustawienia ekranu
         pg.init()
+<<<<<<< HEAD
+=======
+        pg.mouse.set_visible(False)
+>>>>>>> 62a09ed (sterowanie myszka podloga kolor wypelnienie ekranu niebieskie niebo)
         self.screen = pg.display.set_mode(RES)
         self.clock = pg.time.Clock()
         self.delta_time = 1
@@ -35,7 +39,11 @@ class Game:
 
     def draw(self):
         # Wypełnienie ekranu czarnym kolorem i rysowanie mapy
+<<<<<<< HEAD
         self.screen.fill('black')
+=======
+        self.screen.fill('lightblue')
+>>>>>>> 62a09ed (sterowanie myszka podloga kolor wypelnienie ekranu niebieskie niebo)
         self.object_renderer.draw()
         #self.map.draw()
         #self.player.draw()
